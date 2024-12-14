@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
+import { dir } from "i18next";
+
+import "../globals.css";
+
 import { Geist, Geist_Mono } from "next/font/google";
 
-import "./globals.css";
 import Header from "./components/header";
 import Provider from "./components/provider";
 
@@ -21,13 +24,15 @@ export const metadata: Metadata = {
   title: "Create Next App",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { lng },
 }: Readonly<{
   children: React.ReactNode;
+  params: { lng: string };
 }>) {
   return (
-    <html lang="en">
+    <html dir={dir(lng)} lang={lng}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
