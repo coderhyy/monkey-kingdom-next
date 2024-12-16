@@ -3,13 +3,15 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
+import { LanguageSwitcher } from "./language-switcher";
+
 const WalletMultiButton = dynamic(
   async () =>
     (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
   { ssr: false }
 );
 
-export default function Header() {
+export function Header({ lng }: { lng: string }) {
   return (
     <header className="flex justify-between items-center p-4">
       <div className="flex items-center gap-2">
@@ -23,7 +25,12 @@ export default function Header() {
         <h1 className="font-bold text-lg">Monkey Kingdom</h1>
       </div>
 
-      <WalletMultiButton className="text-sm" />
+      <div className="flex items-center gap-x-2">
+        <LanguageSwitcher lng={lng} />
+
+        {/* TODO: i18n */}
+        <WalletMultiButton />
+      </div>
     </header>
   );
 }

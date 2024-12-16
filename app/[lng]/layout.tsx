@@ -6,8 +6,8 @@ import "../globals.css";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
-import Header from "./components/header";
-import Provider from "./components/provider";
+import { Header } from "./components/header";
+import { Provider } from "./components/provider";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -26,18 +26,20 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { lng },
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: { lng: string };
 }>) {
+  const { lng } = await params;
+
   return (
     <html dir={dir(lng)} lang={lng}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
-          <Header />
+          <Header lng={lng} />
           <main className="p-4">{children}</main>
         </Provider>
       </body>

@@ -20,7 +20,7 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { clusterApiUrl } from "@solana/web3.js";
 
-export default function Balance() {
+export function Balance() {
   // 收款地址
   const destination = publicKey("8SwRHB8rzuPDBGkFtUhYdfyQG7Qsjk5qXNoNAdQ2hdar");
 

@@ -1,13 +1,14 @@
-import Balance from "./components/balance";
+import { getTranslation } from "../i18n";
+import { Balance } from "./components/balance";
 
-export default function Home() {
+export default async function Home({ params }: { params: { lng: string } }) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng);
+
   return (
     <>
-      <h1 className="text-2xl font-bold">Welcome to the Kingdom!</h1>
-      <p>
-        Inspired by the beloved tale Journey to the West, Monkey Kingdom brings
-        to life the legend of Sun Wukong in NFT form.
-      </p>
+      <h1 className="text-2xl font-bold">{t("welcome")}</h1>
+      <p>{t("description")}</p>
       <Balance />
     </>
   );

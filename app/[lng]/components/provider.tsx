@@ -10,7 +10,7 @@ import { clusterApiUrl } from "@solana/web3.js";
 import { useMemo } from "react";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
-export default function Provider({ children }: { children: React.ReactNode }) {
+export function Provider({ children }: { children: React.ReactNode }) {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Devnet;
 
