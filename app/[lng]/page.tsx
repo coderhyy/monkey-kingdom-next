@@ -4,7 +4,11 @@ import Image from "next/image";
 import { getTranslation } from "../i18n";
 import { MintCard } from "./components/mint-card";
 
-export default async function Home({ params }: { params: { lng: string } }) {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lng: string }>;
+}) {
   const { lng } = await params;
   const { t } = await getTranslation(lng);
 
