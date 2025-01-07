@@ -15,7 +15,7 @@ export function Header({ lng }: { lng: string }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link
-            className="flex items-center gap-3 transition-transform hover:scale-[1.02]"
+            className="flex items-center gap-2 transition-transform hover:scale-[1.02]"
             href="/"
           >
             <div className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10">
@@ -28,7 +28,8 @@ export function Header({ lng }: { lng: string }) {
               />
             </div>
             <h1 className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
-              {t("monkeyKingdom")}
+              <span className="hidden md:inline">{t("monkeyKingdom")}</span>
+              <span className="md:hidden">{t("mk")}</span>
             </h1>
           </Link>
 

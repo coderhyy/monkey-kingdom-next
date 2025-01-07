@@ -27,7 +27,7 @@ export default async function Home({
 
       <div className="relative mx-auto max-w-6xl px-4 py-24">
         {/* 头部区域 */}
-        <div className="mb-24 space-y-8 text-center">
+        <div className="mb-40 space-y-8 text-center">
           <h1 className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-5xl font-bold !leading-tight text-transparent md:text-6xl">
             {t("welcome")}
           </h1>

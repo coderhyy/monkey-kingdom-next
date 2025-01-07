@@ -32,5 +32,6 @@
   "copyAddress": "Copy Address",
   "disconnect": "Disconnect",
   "connect": "Connect Wallet",
-  "selectWallet": "Select Wallet"
+  "selectWallet": "Select Wallet",
+  "mk": "MK"
 }

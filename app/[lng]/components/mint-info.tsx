@@ -46,7 +46,7 @@ export function MintInfo({ lng }: { lng: string }) {
         <div className="flex items-center gap-2">
           {wallet.publicKey ? (
             <>
-              <span className="font-medium">{getSol(balance)}</span>
+              <span className="font-medium">{getSol(balance).toFixed(4)}</span>
               <span className="text-sm text-gray-400">
                 {balance?.identifier}
               </span>
