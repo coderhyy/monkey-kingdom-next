@@ -11,23 +11,23 @@ export function Header({ lng }: { lng: string }) {
   const { t } = useTranslation(lng);
 
   return (
-    <header className="sticky top-0 left-0 z-10 bg-gray-800/50 backdrop-blur-md border-b border-gray-700/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 justify-between items-center">
+    <header className="sticky left-0 top-0 z-10 border-b border-gray-700/50 bg-gray-800/50 backdrop-blur-md">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <Link
             className="flex items-center gap-3 transition-transform hover:scale-[1.02]"
             href="/"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex items-center justify-center">
+            <div className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10">
               <Image
                 alt="Logo"
-                className="w-6 h-6 dark:invert"
+                className="size-6 dark:invert"
                 height={40}
                 src="/icons/logo.svg"
                 width={40}
               />
             </div>
-            <h1 className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+            <h1 className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
               {t("monkeyKingdom")}
             </h1>
           </Link>

@@ -11,12 +11,12 @@ export function MintCard({ lng }: { lng: string }) {
   const value = useUmi();
 
   return (
-    <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gray-700 max-w-xl mx-auto">
+    <div className="mx-auto max-w-xl rounded-2xl border border-gray-700 bg-gray-800/50 p-6 shadow-xl backdrop-blur-sm">
       {/* NFT 预览 */}
-      <div className="mb-6 relative">
+      <div className="relative mb-6">
         <Image
           alt="NFT Preview"
-          className="rounded-lg w-full"
+          className="w-full rounded-lg"
           height={500}
           src="/images/nft-preview.gif"
           width={500}
@@ -25,7 +25,7 @@ export function MintCard({ lng }: { lng: string }) {
 
       <UmiContext.Provider value={value}>
         <div className="space-y-6">
-          <div className="bg-gray-900/50 rounded-lg p-4">
+          <div className="rounded-lg bg-gray-900/50 p-4">
             <MintInfo lng={lng} />
           </div>
 

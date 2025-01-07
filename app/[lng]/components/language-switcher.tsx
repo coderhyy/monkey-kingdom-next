@@ -15,11 +15,11 @@ export function LanguageSwitcher({ lng }: { lng: string }) {
         .map((l) => {
           return (
             <Link
-              className="bg-gray-800/50 text-gray-100 hover:bg-gray-700/50 border border-gray-700 rounded-xl px-4 py-2 transition-all duration-200 hover:border-blue-500/20 font-medium flex items-center gap-2"
+              className="flex items-center gap-2 rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-2 font-medium text-gray-100 transition-all duration-200 hover:border-blue-500/20 hover:bg-gray-700/50"
               href={`/${l}`}
               key={l}
             >
-              <Globe className="w-4 h-4 text-blue-400" />
+              <Globe className="size-4 text-blue-400" />
               {t(l)}
             </Link>
           );

@@ -111,7 +111,7 @@ export function MintActions({ lng }: { lng: string }) {
     if (isLoading) {
       return (
         <>
-          <LoaderCircle className="w-4 h-4 animate-spin" />
+          <LoaderCircle className="size-4 animate-spin" />
           <span>{t("minting")}</span>
         </>
       );
@@ -120,7 +120,7 @@ export function MintActions({ lng }: { lng: string }) {
     if (isInsufficientBalance) {
       return (
         <>
-          <Wallet className="w-4 h-4" />
+          <Wallet className="size-4" />
           <span>{t("insufficientBalance")}</span>
         </>
       );
@@ -132,7 +132,7 @@ export function MintActions({ lng }: { lng: string }) {
     ) {
       return (
         <>
-          <Ban className="w-4 h-4" />
+          <Ban className="size-4" />
           <span>{t("soldOut")}</span>
         </>
       );
@@ -140,7 +140,7 @@ export function MintActions({ lng }: { lng: string }) {
 
     return (
       <>
-        <Sparkles className="w-4 h-4" />
+        <Sparkles className="size-4" />
         <span>{t("mintNow")}</span>
       </>
     );
@@ -159,7 +159,7 @@ export function MintActions({ lng }: { lng: string }) {
     <div className="space-y-4">
       <div className="flex items-center gap-4">
         <input
-          className="bg-gray-900 border flex-1 border-gray-700 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full flex-1 rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
           disabled
           max={candyMachine && Number(candyMachine?.data.itemsAvailable)}
           min="1"
@@ -169,7 +169,7 @@ export function MintActions({ lng }: { lng: string }) {
           value={amount}
         />
         <button
-          className="bg-gray-700 px-4 py-3 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-700"
+          className="rounded-lg bg-gray-700 px-4 py-3 transition-colors hover:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-gray-700"
           disabled
           onClick={handleMax}
         >
@@ -178,7 +178,7 @@ export function MintActions({ lng }: { lng: string }) {
       </div>
 
       <button
-        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:from-blue-500 disabled:hover:to-purple-500"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-4 font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:from-blue-600 hover:to-purple-600 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 disabled:hover:from-blue-500 disabled:hover:to-purple-500"
         disabled={
           isLoading ||
           isInsufficientBalance ||
