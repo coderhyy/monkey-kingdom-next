@@ -15,6 +15,11 @@ const eslintConfig = [
     "next/typescript",
     "plugin:perfectionist/recommended-natural-legacy"
   ),
+  {
+    rules: {
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+    },
+  },
 ];
 
 export default eslintConfig;
