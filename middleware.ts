@@ -30,7 +30,7 @@ export function middleware(req: NextRequest) {
   }
 
   if (req.headers.has("referer")) {
-    const refererUrl = new URL(req.headers.get("referer"));
+    const refererUrl = new URL(req.headers.get("referer") || "");
     const lngInReferer = languages.find((l) =>
       refererUrl.pathname.startsWith(`/${l}`)
     );
