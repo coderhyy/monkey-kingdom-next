@@ -25,5 +25,12 @@
   "unknownError": "发生未知错误",
   "soldOut": "已售罄",
   "minting": "铸造中...",
-  "monkeyKingdom": "Monkey Kingdom"
+  "monkeyKingdom": "Monkey Kingdom",
+  "changeWallet": "更换钱包",
+  "connecting": "连接中",
+  "copied": "已复制",
+  "copyAddress": "复制地址",
+  "disconnect": "断开连接",
+  "connect": "连接钱包",
+  "selectWallet": "选择钱包"
 }

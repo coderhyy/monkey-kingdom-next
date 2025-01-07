@@ -24,6 +24,13 @@
   "minting": "Casting...",
   "unknownError": "An unknown error occurred",
   "mintError": "Casting failed, please try again",
-  "soldOut": "Sold out",
-  "monkeyKingdom": "Monkey Kingdom"
+  "soldOut": "Sold Out",
+  "monkeyKingdom": "Monkey Kingdom",
+  "changeWallet": "Change Wallet",
+  "connecting": "Connecting",
+  "copied": "Copied",
+  "copyAddress": "Copy Address",
+  "disconnect": "Disconnect",
+  "connect": "Connect Wallet",
+  "selectWallet": "Select Wallet"
 }

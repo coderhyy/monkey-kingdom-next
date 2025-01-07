@@ -13,56 +13,48 @@ export default async function Home({
   const { t } = await getTranslation(lng);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white relative">
+    <div className="min-h-screen bg-background text-foreground">
       {/* 背景装饰 */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-background" />
         <Image
           alt="background"
-          className="object-cover"
+          className="object-cover opacity-[0.03] dark:opacity-[0.07]"
           fill
           src="/images/pattern.png"
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-16 relative">
+      <div className="max-w-6xl mx-auto px-4 py-24 relative">
         {/* 头部区域 */}
-        <div className="text-center mb-16">
-          <h1 className="!leading-tight text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-6">
+        <div className="text-center mb-24 space-y-8">
+          <h1 className="text-5xl !leading-tight md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 animate-gradient">
             {t("welcome")}
           </h1>
-          <p className="text-gray-300 text-xl md:text-2xl max-w-2xl mx-auto mb-8">
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
             {t("description")}
           </p>
 
           {/* 项目亮点 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="bg-gray-800/50 p-6 rounded-xl">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Crown className="w-6 h-6 text-blue-400" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            {[
+              { desc: "feature1Desc", icon: Crown, title: "feature1Title" },
+              { desc: "feature2Desc", icon: Gem, title: "feature2Title" },
+              { desc: "feature3Desc", icon: Flame, title: "feature3Title" },
+            ].map((feature, index) => (
+              <div
+                className="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5"
+                key={index}
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-blue-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-100">
+                  {t(feature.title)}
+                </h3>
+                <p className="text-gray-400">{t(feature.desc)}</p>
               </div>
-              <h3 className="text-lg font-semibold mb-2">
-                {t("feature1Title")}
-              </h3>
-              <p className="text-gray-400">{t("feature1Desc")}</p>
-            </div>
-            <div className="bg-gray-800/50 p-6 rounded-xl">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Gem className="w-6 h-6 text-purple-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">
-                {t("feature2Title")}
-              </h3>
-              <p className="text-gray-400">{t("feature2Desc")}</p>
-            </div>
-            <div className="bg-gray-800/50 p-6 rounded-xl">
-              <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Flame className="w-6 h-6 text-red-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">
-                {t("feature3Title")}
-              </h3>
-              <p className="text-gray-400">{t("feature3Desc")}</p>
-            </div>
+            ))}
           </div>
         </div>
 
