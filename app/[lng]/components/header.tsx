@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/app/i18n/client";
+import { ClusterSelect } from "@/components/cluster/cluster-select";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,6 +37,7 @@ export function Header({ lng }: { lng: string }) {
           <div className="flex items-center gap-4">
             <LanguageSwitcher lng={lng} />
             <WalletConnectButton lng={lng} />
+            <ClusterSelect />
           </div>
         </div>
       </div>

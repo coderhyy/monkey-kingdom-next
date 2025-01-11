@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 
-import { dir } from "i18next";
+import { ClusterProvider } from "@/components/cluster/cluster-provider";
 
 import "../globals.css";
 
+import { SolanaProvider } from "@/components/solana/solana-provider";
+import { dir } from "i18next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 
 import { Header } from "./components/header";
-import { Provider } from "./components/provider";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -39,10 +41,13 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}
       >
-        <Provider>
-          <Header lng={lng} />
-          <main className="p-4">{children}</main>
-        </Provider>
+        <ClusterProvider>
+          <SolanaProvider>
+            <Header lng={lng} />
+            <main className="p-4">{children}</main>
+          </SolanaProvider>
+        </ClusterProvider>
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );
