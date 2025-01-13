@@ -2,14 +2,11 @@
 
 import Image from "next/image";
 
-import { useUmi } from "../logic/useUmi";
-import { UmiContext } from "../logic/useUmiContext";
 import { MintActions } from "./mint-actions";
 import { MintInfo } from "./mint-info";
+import { UmiProvider } from "./umi-provider";
 
 export function MintCard({ lng }: { lng: string }) {
-  const value = useUmi();
-
   return (
     <div className="mx-auto max-w-xl rounded-2xl border border-gray-700 bg-gray-800/50 p-6 shadow-xl backdrop-blur-sm">
       {/* NFT 预览 */}
@@ -23,15 +20,12 @@ export function MintCard({ lng }: { lng: string }) {
         />
       </div>
 
-      <UmiContext.Provider value={value}>
+      <UmiProvider>
         <div className="space-y-6">
-          <div className="rounded-lg bg-gray-900/50 p-4">
-            <MintInfo lng={lng} />
-          </div>
-
+          <MintInfo lng={lng} />
           <MintActions lng={lng} />
         </div>
-      </UmiContext.Provider>
+      </UmiProvider>
     </div>
   );
 }

@@ -13,6 +13,7 @@ export enum ClusterNetwork {
 
 export interface Cluster {
   active?: boolean;
+  candyMachinePublicKey?: string;
   endpoint: string;
   name: string;
   network?: ClusterNetwork;
@@ -23,12 +24,20 @@ export interface Cluster {
 // To use the mainnet-beta cluster, provide a custom endpoint
 export const defaultClusters: Cluster[] = [
   {
+    candyMachinePublicKey: process.env.NEXT_PUBLIC_DEV_CANDY_MACHINE_PUBLIC_KEY,
     endpoint: clusterApiUrl(ClusterNetwork.Devnet),
     name: ClusterNetwork.Devnet,
     network: ClusterNetwork.Devnet,
   },
-  { endpoint: "http://localhost:8899", name: "local" },
   {
+    candyMachinePublicKey:
+      process.env.NEXT_PUBLIC_LOCAL_CANDY_MACHINE_PUBLIC_KEY,
+    endpoint: "http://localhost:8899",
+    name: "local",
+  },
+  {
+    candyMachinePublicKey:
+      process.env.NEXT_PUBLIC_TEST_CANDY_MACHINE_PUBLIC_KEY,
     endpoint: clusterApiUrl(ClusterNetwork.Testnet),
     name: ClusterNetwork.Testnet,
     network: ClusterNetwork.Testnet,

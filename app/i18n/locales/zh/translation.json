@@ -33,5 +33,6 @@
   "disconnect": "断开连接",
   "connect": "连接钱包",
   "selectWallet": "选择钱包",
-  "mk": "MK"
+  "mk": "MK",
+  "candyMachineNotFound": "未找到糖果机"
 }

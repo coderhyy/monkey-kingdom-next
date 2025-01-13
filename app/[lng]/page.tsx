@@ -2,7 +2,7 @@ import { Crown, Flame, Gem } from "lucide-react";
 import Image from "next/image";
 
 import { getTranslation } from "../i18n";
-import { MintCard } from "./components/mint-card";
+import { MintCard } from "./components/mint/mint-card";
 
 export default async function Home({
   params,
