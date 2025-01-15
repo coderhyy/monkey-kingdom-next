@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.1.2] - 2024-01-07
+
+### Changed
+
+- 优化 MintActions 组件代码结构和性能
+- 抽取 MintButtonContent 为独立组件
+- 统一使用 lucide-react 图标库
+- 优化按钮状态管理和展示效果
+- 改进组件类型定义
+- 添加按钮状态动画效果
+
 ## [v0.1.1] - 2024-01-07
 
 ### Changed
